@@ -1,0 +1,10 @@
+PROJECT: Ebay Automation
+GOAL: Create a system that automates the upload of ebay listings to Facebook, Instagram, Tiktok, and Youtube
+CONSTRAINTS:
+    -Use existing code base
+    -Commit and check in every 15 minutes
+DELIVERABLES:
+1. Use the credentials in the .env file to log in to facebook and youtube
+2. Login with facebook for Tiktok and Instagram
+3. Login into the eBay developers program to get listings as need with the login in .env
+4. Post every listing to each social media website.
