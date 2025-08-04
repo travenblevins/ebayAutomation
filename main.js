@@ -1,4 +1,3 @@
-// Entry point for Ebay Automation (JavaScript)
 const { getCredentials } = require('./utils');
 const { loginFacebook, loginYouTube, loginTikTokInstagram } = require('./auth');
 const { fetchEbayListings } = require('./ebayApi');

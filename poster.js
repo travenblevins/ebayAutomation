@@ -1,31 +1,34 @@
-// Post listings to all platforms
 async function postToAllPlatforms(listings, fbSession, ytSession, tiSession) {
   for (const listing of listings) {
     await postToFacebook(listing, fbSession);
+    await postToInstagram(listing, tiSession); // Instagram via Facebook session
+    await postToTikTok(listing, tiSession);    // TikTok via Facebook session
     await postToYouTube(listing, ytSession);
-    await postToTikTok(listing, tiSession);
-    await postToInstagram(listing, tiSession);
   }
 }
 
+// Facebook: Use Graph API for real posting
 async function postToFacebook(listing, session) {
-  // TODO: Implement Facebook posting logic
-  console.log(`Posting to Facebook: ${listing.title}`);
+  // TODO: Replace with Facebook Graph API call
+  console.log(`[Facebook] Posted: ${listing.title} | ${listing.description} | ${listing.image} | $${listing.price}`);
 }
 
-async function postToYouTube(listing, session) {
-  // TODO: Implement YouTube posting logic
-  console.log(`Posting to YouTube: ${listing.title}`);
-}
-
-async function postToTikTok(listing, session) {
-  // TODO: Implement TikTok posting logic
-  console.log(`Posting to TikTok: ${listing.title}`);
-}
-
+// Instagram: Use Facebook Graph API for business accounts
 async function postToInstagram(listing, session) {
-  // TODO: Implement Instagram posting logic
-  console.log(`Posting to Instagram: ${listing.title}`);
+  // TODO: Replace with Instagram Graph API call
+  console.log(`[Instagram] Posted: ${listing.title} | ${listing.description} | ${listing.image}`);
+}
+
+// TikTok: No public API, so stub or use browser automation
+async function postToTikTok(listing, session) {
+  // TODO: Replace with TikTok API or automation
+  console.log(`[TikTok] Posted: ${listing.title} | ${listing.description} | ${listing.image}`);
+}
+
+// YouTube: Use YouTube Data API for real posting
+async function postToYouTube(listing, session) {
+  // TODO: Replace with YouTube Data API call
+  console.log(`[YouTube] Posted: ${listing.title} | ${listing.description}`);
 }
 
 module.exports = { postToAllPlatforms };
